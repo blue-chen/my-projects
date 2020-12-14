@@ -1,0 +1,75 @@
+.homePage {
+    width: 70%;
+    background-color: #F5F5F5;
+    margin: auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.homePage>span {
+    font-size: 18px;
+    margin-left: 25px;
+    margin-top: 30px;
+    font-weight: bold;
+    display: inline-block
+}
+
+.productDiv {
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.productDiv div {
+    float: left;
+    width: 19%;
+    height: 300px;
+    background-color: white;
+    margin-left: 8px;
+    border: 1px solid #F5F5F5;
+}
+
+.productDiv div:hover {
+    border: 1px solid rgb(212, 47, 47);
+    opacity: 0.75;
+}
+
+.productDiv img {
+    width: 100%;
+    height: 70%;
+}
+
+.productDiv p {
+    margin: 10px;
+}
+
+.productDiv span {
+    color: rgb(236, 46, 46);
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.ending {
+    width: 100px;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* 这里就不明白了，.ending这个div设置了上下margin却不起作用非得div的父元素 .homePage 变成bfc 才有效，但是.ending的同级元素span
+    就是 （.homePage的子元素span）却可以设置上margin，这是啥原因。 */
+}
+
+.ending img {
+    width: 100%;
+    height: 100%;
+}
+
+.ensure {
+    width: 70%;
+    margin: auto;
+    height: 90px;
+}
+
+.ensure img {
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,75 @@
+.productDetailImageAndCommDiv {
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.detailAndCommTittleDiv {
+    border: 1px solid rgb(226, 226, 226);
+    overflow: hidden;
+}
+
+
+/* 两个标题的容器采用向左浮动 */
+
+.detailAndCommTittleDiv>div {
+    padding: 13px;
+    float: left;
+}
+
+.detailDiv,
+.commDiv {
+    border-right: 1px solid rgb(226, 226, 226);
+}
+
+.pdParameter {
+    padding: 30px;
+    overflow: hidden;
+    color: #999;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.pdParameter ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    margin-right: 40px;
+}
+
+.pdParameter li {
+    margin: 10px 0;
+}
+
+.pdParameter div {
+    font-weight: bold;
+}
+
+
+/* 用户评价 */
+
+.commentDiv {
+    overflow: hidden;
+    display: none;
+}
+
+.aUserCommDiv {
+    margin-top: 50px;
+    /* background-color: aquamarine; */
+    overflow: hidden;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.aUserId {
+    float: right;
+}
+
+.conAndtime {
+    overflow: hidden;
+}
+
+.detailDiv {
+    background-color: #F5F5F5;
+    border-top: 1px solid rgb(212, 47, 47);
+}

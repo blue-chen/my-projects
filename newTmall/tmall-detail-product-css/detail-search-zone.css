@@ -1,0 +1,75 @@
+.detailSearch {
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+    /* background-color: aquamarine; */
+    position: relative;
+}
+
+.logoAndSearch {
+    overflow: hidden;
+}
+
+.deLogo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.searchBar {
+    /* background-color: antiquewhite; */
+    float: right;
+    margin-right: 55px;
+}
+
+.search {
+    width: 40%;
+    float: right;
+    background-color: rgb(177, 6, 6);
+    height: 41px;
+    padding: 1.5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.search input {
+    height: 37px;
+    border: none;
+    width: 75%;
+}
+
+.search button {
+    height: 37px;
+    /* 设置按钮背景透明 */
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 25px;
+    /*  去掉button点击时的边框 */
+    outline: none;
+}
+
+.searchBar a {
+    color: #999;
+    cursor: pointer;
+}
+
+.searchBar a:hover {
+    /* 链接在鼠标覆盖时会有下划线，要取消就要在hover伪类下取消，而不是在 a元素下取消 */
+    color: rgb(177, 6, 6);
+    text-decoration: none;
+}
+
+.searchBar span {
+    margin: 0 20px;
+}
+
+
+/* 雪碧图 */
+
+.pdSprite {
+    width: 70%;
+    margin: auto;
+}

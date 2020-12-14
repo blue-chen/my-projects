@@ -1,0 +1,102 @@
+.MenuBannerDiv {
+    width: 70%;
+    margin: auto;
+    position: relative;
+}
+
+.firstMenu {
+    /* 给ul的父元素设置宽度，从而确保li 的可用宽度不会是整行 */
+    width: 195px;
+    /* background-color: aqua; */
+    /* 一级菜单设置绝对定位，位置虽然没有变，但是脱离文档流了，后面的轮播栏图可以移上来，轮播图再设置左边距就可以和
+    一级菜单一起在一行上显示 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(226, 226, 226);
+}
+
+.firstMenu>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* 将a标签为中心设置hover事件，设置a为块元素，让a标签完全占据父元素li的宽度，li的高度又是由a的高度决定的，
+所以等于说是a完全占据了li的里面，从而让a的背景颜色可以覆盖整个li，就是一行列表，并且在鼠标放到
+一行列表上的时候，可以触发a的hover事件 */
+
+.firstMenu>ul>li>a {
+    padding: 5px;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    /* 当a变成块元素且在表示一级菜单的li添加div后，a元素的宽度变成占了整行的宽度，应该是块元素div的加入使li的宽度变成了整行，
+    所以a宽度自适应也要占据一行的宽度，为了让块元素ahover时背景颜色不要显示在一行上要强制设置a的width是祖父容器的宽度 195px */
+    width: 195px;
+}
+
+.firstMenu>ul>li>a:hover {
+    color: rgb(177, 6, 6);
+    text-decoration: none;
+    background-color: aliceblue;
+}
+
+.firstMenu>ul>li>a>span {
+    margin-right: 10px;
+}
+
+
+/* /////////传统方式实现二级菜单的hover显示/////////////// */
+
+.subThreeDiv {
+    position: absolute;
+    left: 194px;
+    top: 0px;
+    width: 779px;
+    height: 450px;
+    display: none;
+    /* 轮播图和绝对定位元素重合时，轮播图会覆盖绝对定位元素，所以要提高绝对定位元素的 z-index 值  */
+    z-index: 3;
+    background-color: aliceblue;
+}
+
+.firstMenu>ul>li:hover div {
+    /* li被hover时对li里的div进行显示 */
+    display: block;
+}
+
+.subThreeDiv ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.subThreeDiv ul li {
+    /* 每个li先占据父元素内容空间15%的，剩下的再均分 */
+    flex: 1 15%;
+    margin-top: 5px;
+    /* 将a标签的文字居中在li中 */
+    text-align: center;
+}
+
+
+/* .subThreeDiv ul li:nth-of-type(1) {
+    background-color: aqua;
+} */
+
+.subThreeDiv ul a {
+    color: #999;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.subThreeDiv ul a:hover {
+    color: rgb(69, 133, 206);
+    text-decoration: none;
+}

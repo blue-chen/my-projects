@@ -1,0 +1,42 @@
+.nav-container {
+    background-color: #e7e7e7;
+}
+
+.nav-content {
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+}
+
+.mr {
+    margin-right: 20px;
+}
+
+.sp-float-ri {
+    float: right;
+}
+
+.sp-float-ri a:nth-of-type(1) {
+    margin-right: 20px;
+}
+
+.sp-float-ri a {
+    color: black;
+}
+
+.sp-float-ri a:hover {
+    color: rgb(177, 6, 6);
+    text-decoration: none;
+}
+
+#linkToTmall {
+    color: black;
+    text-decoration: none;
+    /* 去掉下划线 */
+}
+
+#linkToTmall:hover {
+    color: rgb(177, 6, 6)
+}

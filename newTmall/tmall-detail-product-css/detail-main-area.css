@@ -1,0 +1,182 @@
+/* 左边float部分 */
+
+.divProductPriceDetails {
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.displayImgAndPrice {
+    overflow: hidden;
+}
+
+.displayPdImg {
+    width: 40%;
+    float: left;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid rgb(238, 238, 238);
+    margin-right: 30px;
+}
+
+.displayPdImg img {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* 右边float部分 */
+
+.priceAndDescription {
+    overflow: hidden;
+}
+
+.descriptionText {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.juhuasuanDiv {
+    background-color: #2DA77A;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.juhuasuan {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.countdown {
+    color: bisque;
+    font-weight: bold;
+}
+
+.priceDiv {
+    background-color: #F5F5F5;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.gouwujuanDiv img {
+    width: 65px;
+    height: 18px;
+}
+
+.priceDiv span {
+    color: #999;
+}
+
+.priceDiv>div {
+    margin-top: 13px;
+    margin-left: 10px;
+}
+
+.originalPriceYuan {
+    margin-left: 50px;
+}
+
+.promotionDiv .promotionPriceYuan {
+    margin-left: 36px;
+    font-size: 17px;
+    color: rgb(177, 6, 6);
+}
+
+.promotionDiv .promotionPrice {
+    font-size: 26px;
+    color: rgb(177, 6, 6);
+    font-weight: bold;
+}
+
+
+/* 销量和评价 */
+
+.salesAndComDiv div {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    color: #999;
+}
+
+.sales {
+    border-right: 1px solid rgb(224, 224, 224);
+}
+
+.salesAndComDiv span {
+    color: rgb(177, 6, 6);
+}
+
+
+/* 设置分界线与上下元素的间距 */
+
+.priceAndDescription hr {
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+
+/* 购买数量输入框 */
+
+#buyNumberInput {
+    width: 45px;
+    height: 30px;
+}
+
+.buyNumberDiv {
+    color: #999;
+    margin: 20px 0;
+}
+
+.promiseDiv {
+    color: #999;
+}
+
+
+/* 购物车和立即购买按钮 */
+
+.shoppingCarDiv {
+    margin-top: 10px;
+}
+
+.shoppingCarDiv button {
+    width: 160px;
+    height: 38px;
+}
+
+.shoppingCarDiv button:nth-of-type(1) {
+    margin-left: 95px;
+    margin-right: 20px;
+    color: rgb(177, 6, 6);
+    border: 1px solid rgb(177, 6, 6);
+    background-color: rgb(252, 228, 228);
+}
+
+.shoppingCarDiv button:nth-of-type(2) {
+    background-color: rgb(177, 6, 6);
+    color: white;
+    border: 1px solid rgb(177, 6, 6);
+}
+
+
+/* 缩略图css */
+
+.thumbnailDiv {
+    width: 40%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.thumbnailDiv img:nth-of-type(1) {
+    margin-left: 18%;
+}
+
+.thumbnailDiv img {
+    margin-right: 5px;
+    border: 1.5px solid white;
+}
+
+.thumbnailDiv img:hover {
+    border: 1.5px solid rgb(212, 47, 47);
+}

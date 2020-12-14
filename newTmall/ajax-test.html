@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ajax demo</title>
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <style>
+        .div1,
+        .div2,
+        .div0 {
+            width: 300px;
+            height: 200px;
+        }
+        
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="loadImg()">显示图片</button>
+    <button onclick="promise1()">显示图片pro</button>
+    <button onclick="ajaxDisplayText()">修改文本</button>
+
+    <div class="div0"></div>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <p class="showText">使用 AJAX 修改文本内容</p>
+
+    <script>
+        let div0 = document.querySelector('.div0');
+        let div1 = document.querySelector('.div1');
+        let div2 = document.querySelector('.div2');
+
+        // 传统方式使用ajax
+        function loadImg() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.responseType = 'blob';
+            xhttp.onload = function() {
+                let objUrl = URL.createObjectURL(xhttp.response); //  xhttp.response 响应是blob类型的文件
+                let img = document.createElement('img');
+                img.src = objUrl;
+                div1.appendChild(img);
+            };
+            xhttp.open('GET', 'tmall-images/homepage/balloons.jpg', true); //  打开请求对象，也可以说是设置参数
+            xhttp.send();
+
+        }
+
+
+        // 用promise写ajax
+        function promiseToAjax(url) {
+            return new Promise(function(resolve, reject) {
+                var req = new XMLHttpRequest();
+                req.responseType = 'blob'; // 指定了返回类型，就不用再对响应进行文件类型的转换了
+                req.onload = function() { // 判断 request.readyState==4 的效果等同于 onload 
+                    if (req.status === 200) {
+                        resolve(req.response); // 这个响应现在是blob类型的。其实可以不用事先指定响应类型，可以获取后在then函数中转换成自己想要的类型
+                    } else {
+                        reject(new Error(req.statusText));
+                    }
+
+                };
+                req.open('GET', url, true);
+                req.send();
+            })
+        }
+
+        let aUrl = 'tmall-images/homepage/plants.jpg';
+
+        function promise1() {
+            // 返回一个promise对象，该对象返回一个结果
+            promiseToAjax(aUrl).then(function(blob) {
+                let objUrl = URL.createObjectURL(blob); //  xhttp.response 响应是blob类型的文件,promise可以用相对路径
+                let img2 = document.createElement('img');
+                img2.src = objUrl;
+                div2.appendChild(img2);
+            }).catch(function(error) { //接收 reject 抛出的错误信息
+                document.write('错误：' + error);
+            });
+        }
+
+
+
+
+        //  fetch()函数封装了请求的方法，直接返回一个响应，但还不知道这个响应是否正确，所以then函数要对这个进行检查，
+        // 响应正确无误后才对响应进行类型转换，"用promise写ajax"promise函数是获取响应然后检查，然后返回响应给then。
+        // fetch函数可以直接跟 .then()相连的。
+        let promise = fetch('tmall-images/homepage/coastal.jpg'); // 返回一个promise对象,promise对象则返回响应response，现在这个响应还没有转化类型
+        promise.then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`); // 这个要引用jQuery文件
+            } else {
+                return response.blob(); // then()函数对响应进行处理，返回blob类型的响应给后面的then函数
+            }
+        }).then(myBlob => {
+            let objectURL = URL.createObjectURL(myBlob);
+            let image = document.createElement('img');
+            image.src = objectURL;
+            div0.appendChild(image);
+        }).catch(e => {
+            console.log('There has been a problem with your fetch operation: ' + e.message);
+        });
+
+
+        //  用ajax传统方式获取文本
+        function ajaxDisplayText() {
+            let xhttp;
+            if (window.XMLHttpRequest) { // IE7+, Firefox, Chrome, Opera, Safari 代码
+                xhttp = new XMLHttpRequest();
+            } else { // IE6, IE5 代码
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onload = function() {
+                document.querySelector('.showText').innerHTML = xhttp.responseText; // 响应的类型默认是text，responseText 用来获取text类型的响应
+            };
+            xhttp.open('GET', 'ajax-file/ajax-info.txt', true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>
